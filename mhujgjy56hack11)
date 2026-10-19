@@ -1,0 +1,437 @@
+local Players = game:GetService("Players")
+local SoundService = game:GetService("SoundService")
+local PlayerGui = Players.LocalPlayer:WaitForChild("PlayerGui")
+local RunService = game:GetService("RunService")
+local Lighting = game:GetService("Lighting")
+local Workspace = game:GetService("Workspace")
+local LocalPlayer = Players.LocalPlayer
+
+local MyCustomID = "rbxassetid://77384648903361"
+
+local oldGui = PlayerGui:FindFirstChild("g00bya0lanGui")
+if oldGui then oldGui:Destroy() end
+
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "g00bya0lanGui"
+ScreenGui.Parent = PlayerGui
+ScreenGui.ResetOnSpawn = false
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.DisplayOrder = 999
+
+local MainFrame = Instance.new("Frame")
+MainFrame.Size = UDim2.new(0, 520, 0, 340)
+MainFrame.Position = UDim2.new(0.5, -260, 0.5, -170)
+MainFrame.BackgroundColor3 = Color3.fromRGB(0, 25, 0)
+MainFrame.BorderSizePixel = 2
+MainFrame.BorderColor3 = Color3.fromRGB(0, 255, 0)
+MainFrame.Active = true
+MainFrame.Draggable = true
+MainFrame.ZIndex = 1
+MainFrame.Parent = ScreenGui
+
+local BGImage = Instance.new("ImageLabel")
+BGImage.Name = "BGImage"
+BGImage.Size = UDim2.new(1, 0, 1, 0)
+BGImage.Position = UDim2.new(0, 0, 0, 0)
+BGImage.BackgroundTransparency = 0.3
+BGImage.Image = MyCustomID
+BGImage.ScaleType = Enum.ScaleType.Crop
+BGImage.ZIndex = 0
+BGImage.Parent = MainFrame
+
+local TitleBar = Instance.new("Frame")
+TitleBar.Size = UDim2.new(1, 0, 0, 42)
+TitleBar.BackgroundColor3 = Color3.fromRGB(0, 50, 0)
+TitleBar.ZIndex = 2
+TitleBar.Parent = MainFrame
+
+local Title = Instance.new("TextLabel")
+Title.Size = UDim2.new(1, -150, 1, 0)
+Title.Position = UDim2.new(0, 8, 0, 0)
+Title.BackgroundTransparency = 1
+Title.Text = "mhujgjy56hack11 GUI"
+Title.TextColor3 = Color3.fromRGB(0, 255, 0)
+Title.Font = Enum.Font.GothamBold
+Title.TextSize = 20
+Title.TextXAlignment = Enum.TextXAlignment.Center
+Title.ZIndex = 3
+Title.Parent = TitleBar
+
+local BtnScript = Instance.new("TextButton")
+BtnScript.Size = UDim2.new(0, 70, 0, 34)
+BtnScript.Position = UDim2.new(1, -155, 0, 4)
+BtnScript.BackgroundColor3 = Color3.fromRGB(0, 60, 0)
+BtnScript.BorderSizePixel = 1
+BtnScript.BorderColor3 = Color3.fromRGB(0, 255, 0)
+BtnScript.Text = "F3X"
+BtnScript.TextColor3 = Color3.fromRGB(0, 255, 0)
+BtnScript.Font = Enum.Font.GothamBold
+BtnScript.TextSize = 14
+BtnScript.AutoLocalize = false
+BtnScript.ZIndex = 3
+BtnScript.Parent = TitleBar
+BtnScript.MouseButton1Click:Connect(function()
+	pcall(function()
+		loadstring(game:HttpGet("https://pastebin.com/raw/Qw6Fj09a"))()
+	end)
+end)
+
+local BtnR6 = Instance.new("TextButton")
+BtnR6.Size = UDim2.new(0, 70, 0, 34)
+BtnR6.Position = UDim2.new(1, -80, 0, 4)
+BtnR6.BackgroundColor3 = Color3.fromRGB(0, 60, 0)
+BtnR6.BorderSizePixel = 1
+BtnR6.BorderColor3 = Color3.fromRGB(0, 255, 0)
+BtnR6.Text = "R6"
+BtnR6.TextColor3 = Color3.fromRGB(0, 255, 0)
+BtnR6.Font = Enum.Font.GothamBold
+BtnR6.TextSize = 14
+BtnR6.AutoLocalize = false
+BtnR6.ZIndex = 3
+BtnR6.Parent = TitleBar
+BtnR6.MouseButton1Click:Connect(function()
+	pcall(function()
+		loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Real-R6-134571"))()
+	end)
+end)
+
+local Content = Instance.new("Frame")
+Content.Size = UDim2.new(1, -10, 1, -52)
+Content.Position = UDim2.new(0, 5, 0, 47)
+Content.BackgroundTransparency = 1
+Content.ZIndex = 2
+Content.Parent = MainFrame
+
+local function btn(x, y, txt)
+	local b = Instance.new("TextButton")
+	b.Size = UDim2.new(0, 120, 0, 34)
+	b.Position = UDim2.new(0, x, 0, y)
+	b.BackgroundColor3 = Color3.fromRGB(0, 60, 0)
+	b.BackgroundTransparency = 0.2
+	b.BorderSizePixel = 1
+	b.BorderColor3 = Color3.fromRGB(0, 255, 0)
+	b.Text = txt
+	b.TextColor3 = Color3.fromRGB(0, 255, 0)
+	b.Font = Enum.Font.GothamBold
+	b.TextSize = 12
+	b.AutoLocalize = false
+	b.ZIndex = 3
+	b.MouseEnter:Connect(function() b.BackgroundColor3 = Color3.fromRGB(0, 100, 0) end)
+	b.MouseLeave:Connect(function() b.BackgroundColor3 = Color3.fromRGB(0, 60, 0) end)
+	b.Parent = Content
+	return b
+end
+
+local Skybox1 = btn(5, 2, "SKYBOX 1")
+local Skybox2 = btn(130, 2, "SKYBOX 2")
+local Decal1 = btn(255, 2, "DECAL 1")
+local Decal2 = btn(380, 2, "DECAL 2")
+local Message = btn(5, 42, "MESSAGE")
+local Hint = btn(130, 42, "HINT")
+local JumpCare = btn(255, 42, "JUMPSCARE")
+local Speed99 = btn(380, 42, "SPEED 99")
+local Particle = btn(5, 82, "PARTICLES")
+local Disco = btn(130, 82, "DISCO FOG")
+local FlyGui = btn(255, 82, "FLY GUI")
+local WallHop = btn(380, 82, "WALL HOP V5")
+local SkeletonSky = btn(5, 122, "SKELETON SKY")
+local BanHammer = btn(130, 122, "BAN HAMMER")
+local PlayMusic = btn(255, 122, "PLAY MUSIC")
+local JohnDoe = btn(380, 122, "JOHNDOE")
+
+local AllScript = Instance.new("TextButton")
+AllScript.Size = UDim2.new(0, 510, 0, 34)
+AllScript.Position = UDim2.new(0, 5, 0, 162)
+AllScript.BackgroundColor3 = Color3.fromRGB(0, 60, 0)
+AllScript.BackgroundTransparency = 0.2
+AllScript.BorderSizePixel = 1
+AllScript.BorderColor3 = Color3.fromRGB(0, 255, 0)
+AllScript.Text = "ALL SCRIPTS"
+AllScript.TextColor3 = Color3.fromRGB(0, 255, 0)
+AllScript.Font = Enum.Font.GothamBold
+AllScript.TextSize = 14
+AllScript.AutoLocalize = false
+AllScript.ZIndex = 3
+AllScript.Parent = Content
+
+local Sabers = btn(5, 202, "SABERS93")
+local ProtoKidd = btn(130, 202, "PROTOKIDD")
+local C00LK1D = btn(255, 202, "C00LK1D GUI")
+local JavaGui = btn(380, 202, "JAVA GUI")
+local Nyxen = btn(5, 242, "NYXEN")
+local H0imer = btn(130, 242, "H0IMER GUI")
+local Harkinian = btn(255, 242, "HARKINIAN")
+local ServerBy = btn(380, 242, "SERVER BYPASS")
+
+local currentMusic = nil
+local discoRunning = false
+local discoConn = nil
+local particleRunning = false
+local emitters = {}
+local skeletonRunning = false
+
+Skybox1.MouseButton1Click:Connect(function()
+	for _,c in pairs(Lighting:GetChildren()) do if c:IsA("Sky") then c:Destroy() end end
+	local s = Instance.new("Sky",Lighting)
+	s.SkyboxBk=MyCustomID; s.SkyboxDn=MyCustomID; s.SkyboxFt=MyCustomID
+	s.SkyboxLf=MyCustomID; s.SkyboxRt=MyCustomID; s.SkyboxUp=MyCustomID
+end)
+
+Skybox2.MouseButton1Click:Connect(function()
+	for _,c in pairs(Lighting:GetChildren()) do if c:IsA("Sky") then c:Destroy() end end
+	local s = Instance.new("Sky",Lighting)
+	s.SkyboxBk=MyCustomID; s.SkyboxDn=MyCustomID; s.SkyboxFt=MyCustomID
+	s.SkyboxLf=MyCustomID; s.SkyboxRt=MyCustomID; s.SkyboxUp=MyCustomID
+end)
+
+Decal1.MouseButton1Click:Connect(function()
+	local faces = {Enum.NormalId.Front,Enum.NormalId.Back,Enum.NormalId.Left,Enum.NormalId.Right,Enum.NormalId.Top,Enum.NormalId.Bottom}
+	local function apply(p)
+		if p:IsA("BasePart") then
+			for _,f in ipairs(faces) do
+				local d=Instance.new("Decal"); d.Texture=MyCustomID; d.Face=f; d.Parent=p
+			end
+		end
+	end
+	for _,v in pairs(Workspace:GetDescendants()) do apply(v) end
+end)
+
+Decal2.MouseButton1Click:Connect(function()
+	local faces = {Enum.NormalId.Front,Enum.NormalId.Back,Enum.NormalId.Left,Enum.NormalId.Right,Enum.NormalId.Top,Enum.NormalId.Bottom}
+	local function apply(p)
+		if p:IsA("BasePart") then
+			for _,f in ipairs(faces) do
+				local d=Instance.new("Decal"); d.Texture=MyCustomID; d.Face=f; d.Parent=p
+			end
+		end
+	end
+	for _,v in pairs(Workspace:GetDescendants()) do apply(v) end
+end)
+
+Message.MouseButton1Click:Connect(function()
+	local m = Instance.new("Message",Workspace)
+	m.Text = "mhujgjy56hack11 team join today"
+	task.wait(18)
+	m:Destroy()
+end)
+
+Hint.MouseButton1Click:Connect(function()
+	local h = Instance.new("Hint",Workspace)
+	h.Text = "JOIN GAME mhujgjy56hack11 Ha-ha-ha"
+	task.wait(999)
+	h:Destroy()
+end)
+
+JumpCare.MouseButton1Click:Connect(function()
+	pcall(function()
+		local sound = Instance.new("Sound")
+		sound.SoundId = "rbxassetid://6018028320"
+		sound.Volume = 999999
+		sound.Parent = SoundService
+		sound:Play()
+		
+		local jsGui = Instance.new("ScreenGui")
+		jsGui.Name = "TrueCustomJumpscare"
+		jsGui.Parent = PlayerGui
+		jsGui.DisplayOrder = 999999
+		
+		local img = Instance.new("ImageLabel")
+		img.Parent = jsGui
+		img.Size = UDim2.new(1, 0, 1, 0)
+		img.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+		img.Image = MyCustomID
+		img.ScaleType = Enum.ScaleType.Stretch
+		
+		task.wait(9.4)
+		jsGui:Destroy()
+		sound:Destroy()
+	end)
+end)
+
+Speed99.MouseButton1Click:Connect(function()
+	if LocalPlayer.Character and LocalPlayer.Character:FindFirstChild("Humanoid") then
+		LocalPlayer.Character.Humanoid.WalkSpeed = 99
+	end
+end)
+
+Particle.MouseButton1Click:Connect(function()
+	if particleRunning then
+		particleRunning=false
+		for _,e in pairs(emitters) do if e then e:Destroy() end end
+		emitters={}
+		Particle.Text="PARTICLES"
+	else
+		particleRunning=true
+		Particle.Text="STOP PARTICLES"
+		local function apply(ply)
+			task.wait(0.1)
+			if not ply.Character then return end
+			local hrp = ply.Character:FindFirstChild("HumanoidRootPart")
+			if not hrp then return end
+			local e = Instance.new("ParticleEmitter")
+			e.Texture = MyCustomID
+			e.Rate = 250
+			e.Lifetime = NumberRange.new(0.4, 1.5)
+			e.Speed = NumberRange.new(8, 20)
+			e.SpreadAngle = Vector2.new(60, 60)
+			e.Drag = 0.7
+			e.Acceleration = Vector3.new(0, 5, 0)
+			e.Size = NumberSequence.new{
+				NumberSequenceKeypoint.new(0, 0.6),
+				NumberSequenceKeypoint.new(1, 2.5)
+			}
+			e.Parent = hrp
+			table.insert(emitters, e)
+		end
+		for _,p in pairs(Players:GetPlayers()) do task.spawn(apply, p) end
+		Players.PlayerAdded:Connect(apply)
+	end
+end)
+
+Disco.MouseButton1Click:Connect(function()
+	if discoRunning then
+		discoRunning=false
+		if discoConn then discoConn:Disconnect() end
+		Lighting.Ambient=Color3.fromRGB(128,128,128)
+		Lighting.FogColor=Color3.fromRGB(128,128,128)
+		Lighting.FogEnd=100000
+		Disco.Text="DISCO FOG"
+		for _,c in pairs(Lighting:GetChildren()) do
+			if c:IsA("ColorCorrectionEffect") then c:Destroy() end
+		end
+	else
+		discoRunning=true
+		Disco.Text="STOP DISCO"
+		local cc=Instance.new("ColorCorrectionEffect", Lighting)
+		local t = 0
+		Lighting.TimeOfDay=1200
+		Lighting.FogEnd=80
+		discoConn=RunService.Heartbeat:Connect(function()
+			if not discoRunning then return end
+			t=t+0.015
+			local r=math.abs(math.sin(t))*255
+			local g=math.abs(math.sin(t+2))*255
+			local b=math.abs(math.sin(t+4))*255
+			cc.TintColor=Color3.fromRGB(r,g,b)
+			Lighting.FogColor=Color3.fromRGB(r,g,b)
+		end)
+	end
+end)
+
+FlyGui.MouseButton1Click:Connect(function()
+	pcall(function()
+		loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Fly-gui-v3-78856"))()
+	end)
+end)
+
+WallHop.MouseButton1Click:Connect(function()
+	pcall(function()
+		loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Wall-Hop-V5-241707"))()
+	end)
+end)
+
+SkeletonSky.MouseButton1Click:Connect(function()
+	if skeletonRunning then
+		skeletonRunning = false
+		SkeletonSky.Text = "SKELETON SKY"
+		local spooky = Workspace:FindFirstChild("Spooky")
+		if spooky then spooky:Stop(); spooky:Destroy() end
+		local sky = Lighting:FindFirstChild("Sky")
+		if sky then sky:Destroy() end
+		return
+	end
+	skeletonRunning = true
+	SkeletonSky.Text = "STOP SKELETON"
+	local Spooky = Instance.new("Sound", Workspace)
+	Spooky.Name = "Spooky"
+	Spooky.SoundId = "rbxassetid://72089843969979"
+	Spooky.PlaybackSpeed = 0.19
+	Spooky.Volume = 1
+	Spooky.Looped = true
+	Spooky:Play()
+	local Sky = Instance.new("Sky", Lighting)
+	Sky.Name = "Sky"
+	Sky.SkyboxBk = MyCustomID; Sky.SkyboxDn = MyCustomID
+	Sky.SkyboxFt = MyCustomID; Sky.SkyboxLf = MyCustomID
+	Sky.SkyboxRt = MyCustomID; Sky.SkyboxUp = MyCustomID
+end)
+
+BanHammer.MouseButton1Click:Connect(function()
+	pcall(function()
+		loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Ban-Hammer-128356"))()
+	end)
+end)
+
+PlayMusic.MouseButton1Click:Connect(function()
+	if currentMusic then
+		currentMusic:Stop()
+		currentMusic:Destroy()
+	end
+	currentMusic=Instance.new("Sound",SoundService)
+	currentMusic.SoundId="rbxassetid://1839246711"
+	currentMusic.Volume=30
+	currentMusic.Looped=true
+	currentMusic:Play()
+end)
+
+JohnDoe.MouseButton1Click:Connect(function()
+	pcall(function()
+		loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-John-doe-script-by-g00byd0lan-10381"))()
+	end)
+end)
+
+AllScript.MouseButton1Click:Connect(function()
+	pcall(function()
+		loadstring(game:HttpGet("https://pastebin.com/raw/9qqYhc95"))()
+	end)
+end)
+
+Sabers.MouseButton1Click:Connect(function()
+	pcall(function()
+		loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Sabers93new-f3x-gui-v2-79829"))()
+	end)
+end)
+
+ProtoKidd.MouseButton1Click:Connect(function()
+	pcall(function()
+		loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-protokidd-f3x-gui-63391"))()
+	end)
+end)
+
+C00LK1D.MouseButton1Click:Connect(function()
+	pcall(function()
+		loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-C00LK1D-gui-v2-credit-to-c00lkid-82054"))()
+	end)
+end)
+
+JavaGui.MouseButton1Click:Connect(function()
+	pcall(function()
+		loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Java1x3x5x6-Reimagined-Gui-133104"))()
+	end)
+end)
+
+Nyxen.MouseButton1Click:Connect(function()
+	pcall(function()
+		loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Nyxen-Universal-NO-KEY-224333"))()
+	end)
+end)
+
+H0imer.MouseButton1Click:Connect(function()
+	pcall(function()
+		loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-h0imer-GUI-V3-186058"))()
+	end)
+end)
+
+Harkinian.MouseButton1Click:Connect(function()
+	pcall(function()
+		loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Harkinian2019-GUI-238702"))()
+	end)
+end)
+
+ServerBy.MouseButton1Click:Connect(function()
+	pcall(function()
+		loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Serverside-or-fe-bypass-for-free-47095"))()
+	end)
+end)
+
+ScreenGui.Parent = PlayerGui
